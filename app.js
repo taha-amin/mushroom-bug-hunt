@@ -4,8 +4,8 @@ import { addFriend, findFriendByName } from './data-utils.js';
 
 const friendsEl = document.querySelector('.friends');
 const mushroomsEl = document.querySelectorAll('.mushrooms');
-const addMushroomButton = document.getElementById('add-mushroom');
-const addFriendButton = document.getElementById('add-friend');
+const addMushroomButton = document.getElementById('add-mushroom-button');
+const addFriendButton = document.getElementById('add-friend-button');
 const friendInputEl = document.getElementById('friend-input');
 
 // initialize state
@@ -65,9 +65,11 @@ function displayMushrooms() {
 
 
 addFriendButton.addEventListener('click', () => {
-    const name = friendInputEl;
+    const name = friendInputEl.value;
 
     addFriend(name, friendData);
+
+    friendData.push(friendData);
 
     friendInputEl.value = '';
 
